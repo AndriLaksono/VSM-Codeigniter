@@ -29,6 +29,7 @@ class HomeController extends CI_Controller {
     {
         parent::__construct();
         //Do your magic here
+        $this->load->model('BlogModel');
         $this->load->library('Preprocessing');
         $this->load->library('VSM');
     }
@@ -46,7 +47,7 @@ class HomeController extends CI_Controller {
         $query = $this->preprocessing::preprocess($cari);
 
         // STEP 2 == GET DATA & MAKE TO ARRAY
-        $dokumen = $this->KriminalModel->get_data(); // return object
+        $dokumen = $this->BlogModel->get_data(); // return object
         $arrayDokumen = [];
         foreach ($dokumen as $doc) {
             $arrayDoc = [
@@ -61,6 +62,31 @@ class HomeController extends CI_Controller {
 
         die(var_dump($rank));
     }
+
+}
+```
+
+Contoh Model CI kami
+```
+<?php
+
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class BlogModel extends CI_Model {
+
+    
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function get_data()
+    {
+        $data = $this->db->get('blog')->result();
+        return $data;
+    }
+    
 
 }
 ```
