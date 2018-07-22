@@ -3,7 +3,7 @@ Module VSM untuk membantu pencarian pada codeigniter menggunakan Information ret
 
 ## Setting Up
 Untuk menggunakan model ini anda harus melakukan beberapa langkah setup berikut.
-* Import table [tb_katadasar.sql](https://github.com/AndriLaksono/VSM-Laravel/blob/master/tb_katadasar.sql) ke database anda.
+* Import table [tb_katadasar.sql](https://github.com/AndriLaksono/VSM-Codeigniter/blob/master/tb_katadasar.sql) ke database anda.
 * Letakan **VSM.php** dan **Preprocessing.php** dibawah folder *application/libraries*
 ```
 -application
